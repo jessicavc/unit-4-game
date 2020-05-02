@@ -12,89 +12,86 @@
 //  - loss counter */
 
 //global variables
+function getRandomCrystal() {
+   return Math.floor(Math.random() + (12 - 1) + 1);
+}
 
-var crystal1 = Math.floor(Math.random() + (12 - 1) + 1);
-var crystal2 = Math.floor(Math.random() + (12 - 1) + 1);
-var crystal3 = Math.floor(Math.random() + (12 - 1) + 1);
-var crystal4 = Math.floor(Math.random() + (12 - 1) + 1);
+function getRandomNumBox() {
+    return Math.floor(Math.random() * (120 - 19) + 19);
+}
+
 
 //counters
 
 var wins = 0;
 var losses = 0;
-var score;
+var totalScore = 0;
 
 //functions
 
 function reset() {
-    randomNumBox = Math.floor(Math.random() * (120 - 19) + 19)
-        console.log('randomNumber = ' + randomNumBox)
-    crystal1 = Math.floor(Math.random() + (12 - 1) + 1);
-    crystal2 = Math.floor(Math.random() + (12 - 1) + 1);
-    crystal3 = Math.floor(Math.random() + (12 - 1) + 1);
-    crystal4 = Math.floor(Math.random() + (12 - 1) + 1);
-    score = 0;
+    totalScore = 0;
 
-    $('.randomNumBox').html(randomNumBox);
-    $('.scoreBoard').html(scoreBoard);
+    //saves to score on click
+    //added .off() to prevent last score from carrying over to next round
+    $('.box').off().on('click', function(){});
+
+    $('.leaderBoard').html(leaderBoard);
     start();
 }
 
 function start() {
-    randomNumBox = Math.floor(Math.random() * (120 - 19) + 19)
-        console.log('randomNumber = ' + randomNumBox)
-    crystal1 = Math.floor(Math.random() + (12 - 1) + 1);
-    crystal2 = Math.floor(Math.random() + (12 - 1) + 1);
-    crystal3 = Math.floor(Math.random() + (12 - 1) + 1);
-    crystal4 = Math.floor(Math.random() + (12 - 1) + 1);
-    score = 0;
+    var crystal1 = getRandomCrystal();
+    var crystal2 = getRandomCrystal();
+    var crystal3 = getRandomCrystal();
+    var crystal4 = getRandomCrystal();
+
+    var randomNumBox = getRandomNumBox();
 
     $('.randomNumBox').html(randomNumBox);
-    $('.scoreBoard').html(scoreBoard);
+    $('#leaderBoard').html(leaderBoard);
 
-    
+
     //assign random value to crystals
 
     $('.crystal1').attr("value", crystal1);
     var test = $('.crystal1').attr("value");
-        console.log('crystal1 ' + test);
+    console.log('crystal1 ' + test);
 
     $('.crystal2').attr("value", crystal2);
     var test = $('.crystal2').attr("value");
-        console.log('crystal2 ' + test);
-        
+    console.log('crystal2 ' + test);
+
     $('.crystal3').attr("value", crystal3);
     var test = $('.crystal3').attr("value");
-        console.log('crystal3 ' + test);
+    console.log('crystal3 ' + test);
 
     $('.crystal4').attr("value", crystal4);
     var test = $('.crystal4').attr("value");
-        console.log('crystal4' + test);
+    console.log('crystal4' + test);
+
     
-    //saves to score on click
-    //added .off() to prevent last score from carrying over to next round
-    $('.box').off().on('click', function() {
 
-     var test1 = $(this).attr('value');
-            score = parseInt(score) + parseInt(test1);
-            console.log("Crystal* " + test1);
-            console.log("score*** " + score);
-            $('scoreBoard').html(score);
+        var test1 = $(this).attr("value");
+        totalScore = parseInt(totalScore) + parseInt(test1);
+        console.log("Crystal* " + test1);
+        console.log("score*** " + totalScore);
+        $('leaderBoard').html(totalScore);
 
-        if(randonNumBox === finalScore) {
+        if (randonNumBox === finalScore) {
             alert("WINNER!");
             wins++;
             $('.wins').html(wins)
             $('.scoreBoard').html(0);
             reset();
         }
-        else if (score > randomNumBox) {
+        else if (totalScore > randomNumBox) {
             alert('LOSER!');
             losses++;
             $('.losses').html(losses);
             $('scoreBoard').html(0)
             reset();
         }
-    })
-}
+    }
+
 start();
