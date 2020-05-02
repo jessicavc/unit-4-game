@@ -13,7 +13,7 @@
 
 //global variables
 function getRandomCrystal() {
-   return Math.floor(Math.random() + (12 - 1) + 1);
+   return Math.floor(Math.random() * (1 - 12) + 12);
 }
 
 function getRandomNumBox() {
@@ -26,6 +26,32 @@ function getRandomNumBox() {
 var wins = 0;
 var losses = 0;
 var totalScore = 0;
+var leaderBoard = 0;
+var randomNumBox = 0;
+
+
+$("button").on('click', function(event){
+    var currentScore = $(this).val();
+    totalScore += parseInt(currentScore);
+    var totalScoreElement = $('#totalScore');
+    console.log(totalScoreElement);
+    console.log(totalScore); 
+    $('#totalScore').html(totalScore);
+    if (randomNumBox === totalScore) {
+        alert("WINNER!");
+        wins++;
+        $('.wins').html(wins)
+        $('.leaderBoard').html();
+        reset();
+    }
+    else if (totalScore > randomNumBox) {
+        alert('LOSER!');
+        losses++;
+        $('.losses').html(losses);
+        $('leaderBoard').html()
+        reset();
+    }
+})
 
 //functions
 
@@ -33,8 +59,7 @@ function reset() {
     totalScore = 0;
 
     //saves to score on click
-    //added .off() to prevent last score from carrying over to next round
-    $('.box').off().on('click', function(){});
+    randomNumBox = getRandomNumBox();
 
     $('.leaderBoard').html(leaderBoard);
     start();
@@ -46,7 +71,7 @@ function start() {
     var crystal3 = getRandomCrystal();
     var crystal4 = getRandomCrystal();
 
-    var randomNumBox = getRandomNumBox();
+    randomNumBox = getRandomNumBox();
 
     $('.randomNumBox').html(randomNumBox);
     $('#leaderBoard').html(leaderBoard);
@@ -68,30 +93,15 @@ function start() {
 
     $('.crystal4').attr("value", crystal4);
     var test = $('.crystal4').attr("value");
-    console.log('crystal4' + test);
+    console.log('crystal4 ' + test);
 
-    
-
-        var test1 = $(this).attr("value");
-        totalScore = parseInt(totalScore) + parseInt(test1);
-        console.log("Crystal* " + test1);
-        console.log("score*** " + totalScore);
+        // var test1 = $(this).attr("value");
+        // totalScore = parseInt(totalScore) + parseInt(test1);
+        // console.log("Crystal* " + test1);
+        // console.log("score*** " + totalScore);
         $('leaderBoard').html(totalScore);
 
-        if (randonNumBox === finalScore) {
-            alert("WINNER!");
-            wins++;
-            $('.wins').html(wins)
-            $('.scoreBoard').html(0);
-            reset();
-        }
-        else if (totalScore > randomNumBox) {
-            alert('LOSER!');
-            losses++;
-            $('.losses').html(losses);
-            $('scoreBoard').html(0)
-            reset();
-        }
+
     }
 
 start();
