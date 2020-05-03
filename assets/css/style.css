@@ -2,19 +2,49 @@
 
 * {
     font-family: 'Cinzel', serif;
+}
 
+.jumbotron {
+    width: 100%;
+    text-align: center;
+}
+
+
+#instructions {
+    padding: 10px;
+    margin: auto;
+    margin-right: 50px;
+    float: right;
+    border: 1px;
+    border-style: dotted;
+    width: 400px;
+    height: 800px;
+    text-align: center;
+
+}
+
+.ranNumContainer {
+    align-content: center;
+}
+
+.boardContainer {
+    text-align: center;
 }
 
 /* //buttons */
 
+.buttonsContainer {
+    align-content: center;
+}
+
 button {
+    align-content: center;
     border-width: 1px;
     border-style: hidden;
     
 }
 
 button:hover {background-color: grey}
-
 
 
 

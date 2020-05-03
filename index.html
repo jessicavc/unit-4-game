@@ -18,16 +18,17 @@
 
 
 </head>
-
-<body>
     <!-- //jumbrotron-fluid -->
     <div class="jumbotron jumbrotron-fluid">
         <div class="container">
             <h1 class="display-4">Dark Crystal Collector</h1>
         </div>
     </div>
+<body>
 
-    <div class="row-md-12" id="instructions">
+
+    <div class="main-container">
+    <div class="col-mt-2" id="instructions">
     <aside class="instructions">
     <p>Instructions:
         <ul>
@@ -47,7 +48,7 @@
 
 
     <!--number counter-->
-    <div class="container">
+    <div class="ranNumcontainer">
         <h3>Random Number: </h3>
         <div class="randomNumBox" id="randomNumBox">
         </div>
@@ -55,7 +56,7 @@
 
     <!-- //game buttons -->
 
-    <div class="container" id="gameButtons">
+    <div class="buttonsContainer" id="gameButtons">
 
         <button type="button" class="crystal1" value="1">
             <img src="assets/images/darkcrystal.jpeg">
@@ -77,7 +78,7 @@
         </button>
 
         <div class="leaderBoard">
-            <div class="container">
+            <div class="boardContainer">
                 <p>Wins: </p>
                 <p class="wins">0</p>
                 <p>Losses: </p>
@@ -88,13 +89,14 @@
 
 
         <!-- //scoring -->
-
+        <div class="scoreContainer">
         <div class="totalScore">
             Total Score:
             <p id="totalScore"></p>
         </div>
+        </div>
 
-
+    </div>
     </div>
 
     <!-- //JavaScript + jQuery scripts -->
