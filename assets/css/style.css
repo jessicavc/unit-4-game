@@ -1,9 +1,21 @@
+/* //all font */
+
 * {
     font-family: 'Cinzel', serif;
 
 }
 
-body {
-    background-color: purple; 
+/* //buttons */
+
+button {
+    border-width: 1px;
+    border-style: hidden;
+    
 }
+
+button:hover {background-color: grey}
+
+
+
+
 

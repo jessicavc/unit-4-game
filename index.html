@@ -27,28 +27,31 @@
         </div>
     </div>
 
-
-    <!-- //instruction box -->
-    <div class="container" id="instructionBox">
-        <p>Instructions blah blah blah do stuff for the game to do its game thing </p>
+    <div class="row-md-12" id="instructions">
+    <aside class="instructions">
+    <p>Instructions:
+        <ul>
+            <li>A random number between 19-120 will be generated at the start of each round</li>
+            <br>
+            <li>Each dark crystal below has a random number between 1-12 assigned to it. Click on a crystal to
+                add to your score</li>
+            <br>
+            <li>Match your total score to the randomly generated number to win. Go beyond and lose!</li>
+            <br>
+            <stronger>HINT: The value of the crystal will change every round</stronger>
+        </ul>
+    </p>
+    </aside>
     </div>
+    </div>
+
 
     <!--number counter-->
     <div class="container">
-    <div class="randomNumBox" id="randomNumBox">
-    </div>
-
-    </div>
-    <div class="leaderBoard">
-        <div class="container">
-        <p>Wins: </p>
-        <p class="wins">0</p>
-        <p>Losses: </p>
-        <p class="losses">0</p>
+        <h3>Random Number: </h3>
+        <div class="randomNumBox" id="randomNumBox">
         </div>
     </div>
-
-
 
     <!-- //game buttons -->
 
@@ -73,6 +76,16 @@
             <img src="assets/images/darkcrystal.jpeg">
         </button>
 
+        <div class="leaderBoard">
+            <div class="container">
+                <p>Wins: </p>
+                <p class="wins">0</p>
+                <p>Losses: </p>
+                <p class="losses">0</p>
+            </div>
+        </div>
+
+
 
         <!-- //scoring -->
 
@@ -81,7 +94,7 @@
             <p id="totalScore"></p>
         </div>
 
-       
+
     </div>
 
     <!-- //JavaScript + jQuery scripts -->
