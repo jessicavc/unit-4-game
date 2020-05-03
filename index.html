@@ -8,10 +8,10 @@
 
     <!-- Added links to external stylesheets-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&display=swap" rel="stylesheet">
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -20,63 +20,69 @@
 </head>
 
 <body>
+    <!-- //jumbrotron-fluid -->
+    <div class="jumbotron jumbrotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Dark Crystal Collector</h1>
+        </div>
+    </div>
 
-    <h1>Dark Crystal Collector</h1>
 
     <!-- //instruction box -->
-
-    <div id="instructionBox">
+    <div class="container" id="instructionBox">
         <p>Instructions blah blah blah do stuff for the game to do its game thing </p>
     </div>
 
     <!--number counter-->
-    
-    <div id="randomNumBox">
-    </div> 
-    <div class="randomNumBox"></div>
-        <br>
+    <div class="container">
+    <div class="randomNumBox" id="randomNumBox">
+    </div>
+
+    </div>
+    <div class="leaderBoard">
+        <div class="container">
         <p>Wins: </p>
         <p class="wins">0</p>
         <p>Losses: </p>
         <p class="losses">0</p>
+        </div>
     </div>
-    </div>
+
+
 
     <!-- //game buttons -->
 
-    <div id="gameButtons">
+    <div class="container" id="gameButtons">
 
         <button type="button" class="crystal1" value="1">
-            <img src="assets/images/crystal1.jpeg">
-        </div>
+            <img src="assets/images/darkcrystal.jpeg">
+        </button>
+
 
         <button type="button" class="crystal2" value="2">
-            <img src="assets/images/crystal2.jpeg">
-        </div>
+            <img src="assets/images/darkcrystal.jpeg">
+        </button>
+
 
         <button type="button" class="crystal3" value="3">
-            <img src="assets/images/crystal3.jpeg">
-        </div>
+            <img src="assets/images/darkcrystal.jpeg">
+        </button>
+
 
         <button type="button" class="crystal4" value="4">
-            <img src="assets/images/crystal4.jpeg">
+            <img src="assets/images/darkcrystal.jpeg">
+        </button>
+
+
+        <!-- //scoring -->
+
+        <div class="totalScore">
+            Total Score:
+            <p id="totalScore"></p>
         </div>
-    </div>
 
-    <!-- //scoring -->
-
-    <div class="totalScore">
-        Total Score: 
-        <p id="totalScore"></p>
+       
     </div>
-
-    <div class="leaderBoard">
-        <p class="leaderBoard"></p>
-    </div>
-    </div>
-    </div>
-
-
 
     <!-- //JavaScript + jQuery scripts -->
     <script src="assets/javascript/game.js"></script>

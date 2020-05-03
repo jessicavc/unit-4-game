@@ -61,7 +61,7 @@ function reset() {
     //saves to score on click
     randomNumBox = getRandomNumBox();
 
-    $('.leaderBoard').html(leaderBoard);
+    $('#totalScore').html(leaderBoard);
     start();
 }
 
